@@ -2097,11 +2097,11 @@ textarea.w-input, textarea.w-select {
   --red: #e53935;
   --steel-blue\<deleted\|variable-5ad820f9\>: #1976d2;
   --medium-sea-green\<deleted\|variable-ef32392e\>: #20c788;
-  --dark-black: #050505;
   --white: white;
   --blackinverted: #ececec;
   --graytix: #979797;
   --whiteinverted: #080808;
+  --dark-black: #050505;
 }
 
 .w-layout-blockcontainer {
@@ -3371,6 +3371,8 @@ blockquote {
 .menu-wrapper {
   z-index: 900;
   object-fit: fill;
+  width: 100%;
+  max-width: 100%;
   margin-top: 0;
   position: -webkit-sticky;
   position: sticky;
@@ -3475,7 +3477,7 @@ blockquote {
 }
 
 .footer {
-  background-color: var(--dark-black);
+  background-color: #111;
   margin-top: 0;
   padding-top: 65px;
   padding-bottom: 10px;
@@ -4047,12 +4049,14 @@ blockquote {
 }
 
 .hero-top-section {
+  z-index: 5;
   -webkit-backdrop-filter: blur();
   backdrop-filter: blur();
   justify-content: center;
   align-items: flex-start;
   margin-top: 0;
   display: flex;
+  position: relative;
 }
 
 .hero-logo {
@@ -4111,6 +4115,7 @@ blockquote {
 }
 
 .button {
+  z-index: 2;
   text-align: left;
   text-transform: lowercase;
   background-color: #525252;
@@ -4120,9 +4125,11 @@ blockquote {
   height: 100%;
   margin-top: 35px;
   margin-left: auto;
+  font-family: Montserrat, sans-serif;
   font-style: normal;
   transition: all .2s;
-  box-shadow: 0 0 19px 5px #000;
+  position: relative;
+  box-shadow: inset 0 0 14px rgba(0, 0, 0, .82), 0 0 19px 5px #000;
 }
 
 .button:hover {
@@ -4377,9 +4384,9 @@ blockquote {
 .card {
   background-image: radial-gradient(circle farthest-side at -17% 121%, #f70, rgba(90, 89, 89, 0) 46%), linear-gradient(180deg, var(--black) 8%, rgba(255, 255, 255, 0) 33%), url("../images/oldroom.webp");
   outline-offset: 0px;
-  background-position: 0 0, 0 0, 50% 100%;
+  background-position: 0 0, 0 0, 100%;
   background-repeat: repeat, repeat, no-repeat;
-  background-size: auto, auto, contain;
+  background-size: auto, auto, cover;
   border: 5px solid #414141;
   border-radius: 35px;
   outline: 3px #fff;
@@ -4397,15 +4404,23 @@ blockquote {
 
 .card.second {
   background-image: radial-gradient(circle farthest-side at 86% 122%, #ff0062, rgba(90, 89, 89, 0) 46%), linear-gradient(180deg, var(--black) 8%, rgba(255, 255, 255, 0) 33%), url("../images/newroom.webp");
-  background-position: 0 0, 0 0, 50% 100%;
+  background-position: 0 0, 0 0, 50%;
   background-repeat: repeat, repeat, no-repeat;
-  background-size: auto, auto, contain;
+  background-size: auto, auto, cover;
   box-shadow: inset 0 0 17px 14px rgba(0, 0, 0, .51), 0 0 3px 1px #ff0059, 0 0 50px 20px rgba(255, 0, 4, .27);
 }
 
 .card.third {
   background-image: radial-gradient(circle farthest-side at -30% 141%, #000dff, rgba(90, 89, 89, 0) 46%);
   box-shadow: inset 0 0 17px 14px rgba(0, 0, 0, .51), 0 0 3px 1px #8400ff, 0 0 50px 20px rgba(0, 119, 255, .27);
+}
+
+.card.third2 {
+  background-image: radial-gradient(circle farthest-side at -17% 121%, #2a00ff, rgba(90, 89, 89, 0) 46%), linear-gradient(180deg, var(--black) 8%, rgba(255, 255, 255, 0) 33%), url("../images/suite.webp");
+  background-position: 0 0, 0 0, 50% 100%;
+  background-repeat: repeat, repeat, no-repeat;
+  background-size: auto, auto, cover;
+  box-shadow: inset 0 0 17px 14px rgba(0, 0, 0, .51), 0 0 3px 1px #5219ff, 0 0 50px 20px rgba(149, 0, 255, .27);
 }
 
 .image-4 {
@@ -4475,7 +4490,7 @@ blockquote {
   font-family: Sen, sans-serif;
   font-size: 87px;
   font-weight: 400;
-  position: absolute;
+  position: static;
   top: auto;
   bottom: -26%;
   left: 0%;
@@ -4489,6 +4504,10 @@ blockquote {
 
 .card-heading.third {
   background-image: linear-gradient(225deg, #08f 30%, #fff);
+}
+
+.card-heading.third2 {
+  background-image: linear-gradient(225deg, #9500ff 64%, #000);
 }
 
 .div-block-6 {
@@ -4522,7 +4541,9 @@ blockquote {
 
 .paragraph {
   text-align: center;
-  font-size: 21px;
+  white-space: normal;
+  margin-top: 20px;
+  font-size: 18px;
   position: static;
   overflow: visible;
 }
@@ -4553,6 +4574,8 @@ blockquote {
 
 .text-block-3 {
   text-align: center;
+  white-space: normal;
+  width: 90%;
   font-size: 20px;
 }
 
@@ -4570,13 +4593,17 @@ blockquote {
   margin-top: -60px;
   margin-left: 119px;
   margin-right: 119px;
-  padding-top: 14px;
-  padding-bottom: 30px;
+  padding: 14px 0 30px;
   display: flex;
+  box-shadow: 0 0 20px 8px rgba(255, 162, 0, .11);
 }
 
 .textdiv.text {
   flex-flow: column;
+}
+
+.textdiv.first {
+  margin-top: -23px;
 }
 
 .cell {
@@ -4602,7 +4629,7 @@ blockquote {
   background-image: url("../images/newroom.webp");
   background-position: 100%;
   background-repeat: repeat;
-  background-size: contain;
+  background-size: cover;
   background-attachment: fixed;
   width: 100%;
   height: 100%;
@@ -4620,7 +4647,7 @@ blockquote {
 .div-block-9 {
   background-image: url("../images/boxsauna.jpg");
   background-position: 427% 100%;
-  background-size: contain;
+  background-size: cover;
   background-attachment: fixed;
   width: 100%;
   height: 300px;
@@ -4714,6 +4741,11 @@ blockquote {
   margin-top: 10px;
   font-family: Ubuntu, Helvetica, sans-serif;
   font-weight: 700;
+}
+
+.paragraph-5 {
+  margin-top: 9px;
+  margin-left: 20px;
 }
 
 @media screen and (max-width: 991px) {
@@ -4827,6 +4859,11 @@ blockquote {
     padding-right: 0;
   }
 
+  .button {
+    background-color: #525252;
+    box-shadow: inset 0 0 16px 4px rgba(0, 0, 0, .29), 0 0 19px 5px #000;
+  }
+
   .section.imagesection.first {
     margin-top: 71px;
   }
@@ -4838,6 +4875,10 @@ blockquote {
     display: block;
   }
 
+  .section.imagesection.third {
+    background-position: 50%;
+  }
+
   .footernumber {
     margin-left: 45px;
   }
@@ -4845,6 +4886,11 @@ blockquote {
   .div-block-3 {
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+  }
+
+  .image-dot-overlay {
+    opacity: .75;
+    background-image: url("../images/pattern2.png");
   }
 
   .card {
@@ -5025,6 +5071,10 @@ blockquote {
     z-index: 1;
     margin-top: 22px;
     top: 29px;
+  }
+
+  .heading-4 {
+    font-size: 36px;
   }
 
   .textdiv {
@@ -5272,6 +5322,10 @@ blockquote {
     margin-top: 19px;
     margin-bottom: 19px;
     font-size: 10px;
+  }
+
+  .heading-4 {
+    font-size: 20px;
   }
 
   .text-block-3 {
