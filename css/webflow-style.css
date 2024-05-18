@@ -2097,10 +2097,10 @@ textarea.w-input, textarea.w-select {
   --red: #e53935;
   --steel-blue\<deleted\|variable-5ad820f9\>: #1976d2;
   --medium-sea-green\<deleted\|variable-ef32392e\>: #20c788;
+  --whiteinverted: #080808;
   --white: white;
   --blackinverted: #ececec;
   --graytix: #979797;
-  --whiteinverted: #080808;
   --dark-black: #050505;
 }
 
@@ -3227,11 +3227,13 @@ blockquote {
 }
 
 .container {
+  flex-flow: column;
   max-width: 1123px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 15px;
   padding-right: 15px;
+  display: flex;
 }
 
 .container.contact {
@@ -3357,9 +3359,10 @@ blockquote {
 }
 
 .hero-section.about-hero {
-  background-image: linear-gradient(360deg, #222, rgba(34, 34, 34, 0)), url("../images/felix-rostig-umv2wr-vbq8-unsplash.jpg");
+  background-image: linear-gradient(360deg, #222, rgba(34, 34, 34, 0)), url("../images/coastal.png");
   background-position: 0 0, 50% 60%;
   background-size: auto, cover;
+  min-height: 500px;
 }
 
 .hero-section.contact-hero {
@@ -3481,6 +3484,7 @@ blockquote {
   margin-top: 0;
   padding-top: 65px;
   padding-bottom: 10px;
+  display: block;
 }
 
 .footer-wrapper {
@@ -3507,10 +3511,27 @@ blockquote {
 .content-section {
   padding-top: 65px;
   padding-bottom: 65px;
+  box-shadow: inset 0 0 20px 9px rgba(0, 0, 0, .46);
 }
 
-.content-section.why-acme-sections, .content-section.featured-section {
+.content-section.why-acme-sections {
+  box-shadow: none;
   padding-bottom: 0;
+}
+
+.content-section.featured-section {
+  padding-bottom: 0;
+}
+
+.content-section.events {
+  color: var(--whiteinverted);
+  background-image: url("../images/beahcview.png");
+  background-position: 50%;
+  background-size: auto;
+}
+
+.about-top-block {
+  margin-bottom: 10px;
 }
 
 .why-acme-block {
@@ -3537,7 +3558,12 @@ blockquote {
 }
 
 .about-column {
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
   width: 22%;
+  padding-left: 10px;
+  padding-right: 9px;
+  box-shadow: 0 0 9px 6px rgba(0, 0, 0, .2);
 }
 
 .image {
@@ -3551,7 +3577,7 @@ blockquote {
 }
 
 .meet-the-owners-right {
-  background-color: var(--black);
+  background-color: var(--whiteinverted);
   color: var(--white-smoke\<deleted\|variable-c07981f9\>);
   border-radius: 5px;
   width: 70%;
@@ -3890,10 +3916,11 @@ blockquote {
 }
 
 .donate-explainer {
-  background-image: linear-gradient(to bottom, rgba(34, 34, 34, .56), var(--black)), url("../images/jed-villejo-becc0nyip2g-unsplash-20-1-20-1-.jpg");
+  background-image: linear-gradient(180deg, rgba(34, 34, 34, .56), var(--black)), url("../images/suite.webp");
   color: var(--white-smoke\<deleted\|variable-c07981f9\>);
   background-position: 0 0, 50% 25%;
   background-size: auto, cover;
+  background-attachment: scroll, fixed;
   min-height: 550px;
   padding-top: 151px;
   padding-bottom: 35px;
@@ -3914,6 +3941,7 @@ blockquote {
 
 .donate-paragraph {
   text-align: center;
+  white-space: normal;
   width: 65%;
   margin-left: auto;
   margin-right: auto;
@@ -4050,6 +4078,8 @@ blockquote {
 
 .hero-top-section {
   z-index: 5;
+  grid-column-gap: 80px;
+  grid-row-gap: 80px;
   -webkit-backdrop-filter: blur();
   backdrop-filter: blur();
   justify-content: center;
@@ -4075,6 +4105,7 @@ blockquote {
 
 .hero-bottom-text {
   color: #fff;
+  white-space: nowrap;
   flex-flow: row;
   align-self: auto;
   margin-top: 0;
@@ -4104,6 +4135,7 @@ blockquote {
   border-radius: 0;
   flex-flow: row;
   width: 72%;
+  max-height: 200px;
   margin-right: 0;
   padding: 19px 20px;
   display: flex;
@@ -4117,17 +4149,19 @@ blockquote {
 .button {
   z-index: 2;
   text-align: left;
-  text-transform: lowercase;
+  text-transform: uppercase;
   background-color: #525252;
   border-radius: 0 0 0 8px;
   flex: 0 auto;
   order: 1;
-  height: 100%;
-  margin-top: 35px;
-  margin-left: auto;
+  height: 50%;
+  margin-top: 33px;
+  margin-left: 0;
   font-family: Montserrat, sans-serif;
   font-style: normal;
+  font-weight: 600;
   transition: all .2s;
+  display: none;
   position: relative;
   box-shadow: inset 0 0 14px rgba(0, 0, 0, .82), 0 0 19px 5px #000;
 }
@@ -4135,6 +4169,14 @@ blockquote {
 .button:hover {
   color: #0c0c0c;
   background-color: #f8f8f8;
+}
+
+.button.nav {
+  margin-top: 1px;
+}
+
+.button.not-hidden {
+  display: block;
 }
 
 .background-video {
@@ -4254,7 +4296,7 @@ blockquote {
 .body {
   background-color: var(--black);
   color: var(--white);
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .heading-2 {
@@ -4267,7 +4309,7 @@ blockquote {
 
 .footertext {
   color: var(--blackinverted);
-  text-transform: lowercase;
+  text-transform: none;
   order: -1;
   font-family: Inconsolata, monospace;
   font-size: 26px;
@@ -4280,6 +4322,10 @@ blockquote {
   background-clip: text;
   margin-left: 261px;
   font-size: 48px;
+}
+
+.footernumber.mail {
+  margin-left: 24px;
 }
 
 .div-block-3 {
@@ -4748,6 +4794,78 @@ blockquote {
   margin-left: 20px;
 }
 
+.div-block-12 {
+  width: 50%;
+}
+
+.restaurantmenudiv {
+  align-self: center;
+  width: 50%;
+}
+
+.flex-container {
+  flex-flow: row;
+  max-width: 1123px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+}
+
+.flex-container.contact {
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+}
+
+.image-9 {
+  box-shadow: 6px 8px 9px 8px rgba(0, 0, 0, .33);
+}
+
+.navbar2 {
+  grid-column-gap: 341px;
+  grid-row-gap: 341px;
+  -webkit-backdrop-filter: blur(13px);
+  backdrop-filter: blur(13px);
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  position: fixed;
+  box-shadow: 0 0 15px 10px rgba(0, 0, 0, .2);
+}
+
+.heading-5 {
+  color: var(--white);
+  text-align: center;
+  background-color: rgba(0, 0, 0, .73);
+}
+
+.heading-6, .heading-7, .heading-8, .field-label {
+  text-align: center;
+}
+
+.text-field {
+  color: var(--black);
+  width: 80%;
+  margin-right: 18px;
+  padding-right: 12px;
+}
+
+.form {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.submit-button {
+  margin-bottom: 7px;
+}
+
 @media screen and (max-width: 991px) {
   .container {
     padding-left: 15px;
@@ -4936,6 +5054,16 @@ blockquote {
   .image-8 {
     max-width: none;
   }
+
+  .flex-container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .flex-container.contact {
+    padding-bottom: 35px;
+    position: static;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -5091,6 +5219,11 @@ blockquote {
 
   .quick-stack {
     grid-row-gap: 20px;
+  }
+
+  .flex-container.shop-local-container {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
