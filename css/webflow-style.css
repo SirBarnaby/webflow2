@@ -3236,12 +3236,20 @@ blockquote {
   display: flex;
 }
 
+.container.shop-local-container {
+  height: 100%;
+}
+
 .container.contact {
   position: absolute;
   top: 0%;
   bottom: 0%;
   left: 0%;
   right: 0%;
+}
+
+.container.hero {
+  margin-top: 73px;
 }
 
 .page-title {
@@ -3408,6 +3416,7 @@ blockquote {
 }
 
 .hero-heading.anout-hero-heading {
+  text-transform: none;
   width: 40%;
 }
 
@@ -3527,7 +3536,15 @@ blockquote {
   color: var(--whiteinverted);
   background-image: url("../images/beahcview.png");
   background-position: 50%;
-  background-size: auto;
+  background-size: cover;
+}
+
+.content-section.menu {
+  height: 1000px;
+}
+
+.content-wrapper {
+  height: 100%;
 }
 
 .about-top-block {
@@ -3572,6 +3589,8 @@ blockquote {
 
 .meet-the-owners-wrapper {
   justify-content: flex-end;
+  width: 100%;
+  height: 100%;
   display: flex;
   position: relative;
 }
@@ -3580,15 +3599,15 @@ blockquote {
   background-color: var(--whiteinverted);
   color: var(--white-smoke\<deleted\|variable-c07981f9\>);
   border-radius: 5px;
+  align-self: center;
   width: 70%;
   padding: 90px 55px 90px 245px;
+  box-shadow: inset 0 0 20px -2px rgba(255, 255, 255, .51);
 }
 
 .meet-the-owners-left {
-  background-image: url("../images/sept-commercial-cqu3ddnwtkq-unsplash-20-1-20-1-.jpg");
-  background-position: 50% 100%;
-  background-size: cover;
   border-radius: 5px;
+  flex: 0 auto;
   width: 45%;
   height: 90%;
   position: absolute;
@@ -3596,6 +3615,11 @@ blockquote {
   bottom: 0%;
   left: 0%;
   right: auto;
+}
+
+.owners-rich-text {
+  font-family: Vollkorn, serif;
+  font-weight: 400;
 }
 
 .owners-rich-text h2 {
@@ -4078,8 +4102,8 @@ blockquote {
 
 .hero-top-section {
   z-index: 5;
-  grid-column-gap: 80px;
-  grid-row-gap: 80px;
+  grid-column-gap: 290px;
+  grid-row-gap: 290px;
   -webkit-backdrop-filter: blur();
   backdrop-filter: blur();
   justify-content: center;
@@ -4161,7 +4185,7 @@ blockquote {
   font-style: normal;
   font-weight: 600;
   transition: all .2s;
-  display: none;
+  display: block;
   position: relative;
   box-shadow: inset 0 0 14px rgba(0, 0, 0, .82), 0 0 19px 5px #000;
 }
@@ -4173,6 +4197,10 @@ blockquote {
 
 .button.nav {
   margin-top: 1px;
+}
+
+.button.nav.w--current {
+  z-index: 9999;
 }
 
 .button.not-hidden {
@@ -4826,6 +4854,7 @@ blockquote {
 }
 
 .navbar2 {
+  z-index: 999;
   grid-column-gap: 341px;
   grid-row-gap: 341px;
   -webkit-backdrop-filter: blur(13px);
@@ -4850,7 +4879,10 @@ blockquote {
 }
 
 .text-field {
-  color: var(--black);
+  color: var(--white);
+  background-color: #333;
+  border: 1px solid #000;
+  border-radius: 11px;
   width: 80%;
   margin-right: 18px;
   padding-right: 12px;
@@ -5077,6 +5109,19 @@ blockquote {
     margin-bottom: 50px;
   }
 
+  .content-section.events {
+    margin-bottom: 371px;
+  }
+
+  .content-section.menu {
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+    display: block;
+  }
+
   .about-columns-wrapper {
     flex-wrap: wrap;
   }
@@ -5104,7 +5149,7 @@ blockquote {
   .meet-the-owners-left {
     border-radius: 0;
     width: 100%;
-    height: 400px;
+    height: 1000px;
     position: static;
   }
 
@@ -5241,6 +5286,11 @@ blockquote {
     font-size: 30px;
   }
 
+  .hero-heading.anout-hero-heading {
+    width: 100%;
+    font-size: 30px;
+  }
+
   .hero-paragraph {
     width: 70%;
     font-size: 13px;
@@ -5277,6 +5327,10 @@ blockquote {
     margin-right: 25px;
   }
 
+  .content-section.events {
+    margin-bottom: 161px;
+  }
+
   .why-acme-block {
     width: 100%;
   }
@@ -5286,6 +5340,10 @@ blockquote {
     flex-direction: column;
     justify-content: center;
     display: flex;
+  }
+
+  .owners-rich-text h2 {
+    font-size: 16px;
   }
 
   .contact-image-div {
@@ -5476,6 +5534,10 @@ blockquote {
 
   .quick-stack {
     grid-column-gap: 30px;
+  }
+
+  .paragraph-6 {
+    font-size: 10px;
   }
 }
 
